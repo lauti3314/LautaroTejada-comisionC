@@ -1,75 +1,85 @@
-print('Ingrese a continuación la fecha con el formato solicitado:')
-fecha_input = input('Formato: [Día de la semana], [DD/MM]: ')
+print("Ingrese el día y la fecha en el siguiente formato")
+fecha=input("día, DD/MM: ")
+partes1=fecha.split(", ")
+dia=partes1[0]
+partes2=partes1[1].split("/")
+dd=int(partes2[0])
+mm=int(partes2[1])
 
-parts = fecha_input.split(', ')
-print("Parts:", parts)
-dia_semana = parts[0].lower()
-dia, mes = map(int, parts[1].split('/'))
-print("Día de la semana:", dia_semana)  
-print("Día:", dia)
-print("Mes:", mes)
+dia=dia.lower()
 
-if dia_semana == 'l' or dia_semana =='m' or dia_semana=='x' or dia_semana=='j' or dia_semana=='v':
-    if dia <= 0 or dia > 31:
-        print('El dia ingresado no es valido')
+if dia=="lunes" or dia=="martes" or dia=="miercoles" or dia=="jueves" or dia=="viernes":
+    if dd<1 and dd>31:
+        print("La fecha ingresada es inválida")
         quit()
-    elif mes <= 0 or mes > 12:
-        print('El mes ingresado no es valido')
-        quit()
-    elif dia > 29 and mes == 2:
-        print('La fecha es invalida')
-        quit()
-    elif dia>30 and (mes==4 or mes==6 or mes==9 or mes == 11):
-        print('La fecha es invalida')
-        quit()
-    elif len(dia_semana)>1:
-        print('El dia de la semana ingresado es invalido')
-        quit()
-
-cantidad_aprobados = 0
-cantidad_desaprobados = 0
-if (dia_semana == 'j' or dia_semana =='v'):
-    decision = '2'
-else: 
-    print(f'¿El dia ({dia}/{mes}) se tomaron examenes?')
-    print(f'1.Si\n2.No')
-    decision = input()
-if decision=='1':
-    if dia_semana=='l':
-        print(f'En el dia lunes se tomaron examenes al nivel inicial')
-        cantidad_aprobados = int(input('Ingrese la cantidad de aprobados'))
-        cantidad_desaprobados = int(input('Ingrese la cantidad de desaprobados'))
-        total = cantidad_aprobados + cantidad_desaprobados
-        print(f'El porcentaje de alumnos aprobados es de: {(cantidad_aprobados/total)*100}%')
-    elif dia_semana=='m':
-        print(f'En el dia martes se tomaron examenes al nivel intermedio')
-        cantidad_aprobados = int(input('Ingrese la cantidad de aprobados: '))
-        cantidad_desaprobados = int(input('Ingrese la cantidad de desaprobados'))
-        total = cantidad_aprobados + cantidad_desaprobados
-        print(f'El porcentaje de alumnos aprobados es de: {(cantidad_aprobados/total)*100}%')
-    elif dia_semana=='x':
-        print(f'En el dia miercoles se tomaron examenes al nivel avanzado')
-        cantidad_aprobados = int(input('Ingrese la cantidad de aprobados'))
-        cantidad_desaprobados = int(input('Ingrese la cantidad de desaprobados'))
-        total = cantidad_aprobados + cantidad_desaprobados
-        print(f'El porcentaje de alumnos aprobados es de: {(cantidad_aprobados/total)*100}%')
-elif decision=='2':
-    if dia_semana =='j':
-        print('El dia jueves corresponde a practicas habladas')
-        porc_asistencia = int(input('Ingrese el porcentaje de asistencia: '))
-        if porc_asistencia > 100 or porc_asistencia < 0:
-            print('El porcentaje indicado no es valido')
+    elif mm==2 and dd>29:
+            print("La fecha ingresada es inválida, febrero solo tiene 29 días")
             quit()
-        elif porc_asistencia > 50:
-            print('Asistió la mayoria de alumnos a la practica hablada')
-        else: 
-            print('No asistio la mayoria de alumnos a la practica hablada')
-    elif dia_semana=='v':
-        if (dia==1 and mes==1) or (dia==1 and mes==7):
-            print('Comienzo de nuevo ciclo')
-            cant_alumnos = int(input('Ingrese la cantidad de alumnos del nuevo ciclo: '))
-            arancel = int(input('Ingrese el arancel correspondiente a cada alumno: $ '))
-            print(f'El ingreso total es de ${arancel*cant_alumnos}')
+    elif mm==4 and dd>30 or mm==6 and dd>30 or mm==9 and dd>30 or mm==11 and dd>30:
+            print("La fecha ingresada es inválida, el mes indicado solo tiene 30 días")
+            quit()
     else:
-        print('No hay datos que proporcionar')
+        if dia=="lunes":
+            examen=input("¿Se tomó exámen al nivel inicial?: ")
+            examen=examen.lower()
+            if examen=="si":
+                aprobados=float(input("¿Cuantos alumnos aprobaron?: "))
+                desaprobados=float(input("¿Cuantos alumnos desaprobaron?: "))
+                total_alumnos=aprobados+desaprobados
+                porcent_aprob=(aprobados*100)/total_alumnos
+                print("Aprobó el",porcent_aprob,"% de los estudiantes")
+                porcent_desaprob=(desaprobados*100)/total_alumnos
+                print("Desaprobó el", porcent_desaprob, "% de los estudiantes")
+                quit()
+            else:
+                quit()
+        elif dia=="martes":
+            examen=input("¿Se tomó exámen al nivel intermedio?: ")
+            examen=examen.lower()
+            if examen=="si":
+                aprobados=float(input("¿Cuantos alumnos aprobaron?: "))
+                desaprobados=float(input("¿Cuantos alumnos desaprobaron?: "))
+                total_alumnos=aprobados+desaprobados
+                porcent_aprob=(aprobados*100)/total_alumnos
+                print("Aprobó el",porcent_aprob,"% de los estudiantes")
+                porcent_desaprob=(desaprobados*100)/total_alumnos
+                print("Desaprobó el", porcent_desaprob, "% de los estudiantes")
+                quit()
+            else:quit()
+        elif dia=="miercoles":
+            examen=input("¿Se tomó exámen al nivel avanzado?: ")
+            examen=examen.lower()
+            if examen=="si":
+                aprobados=float(input("¿Cuantos alumnos aprobaron?: "))
+                desaprobados=float(input("¿Cuantos alumnos desaprobaron?: "))
+                total_alumnos=aprobados+desaprobados
+                porcent_aprob=(aprobados*100)/total_alumnos
+                print("Aprobó el",porcent_aprob,"% de los estudiantes")
+                porcent_desaprob=(desaprobados*100)/total_alumnos
+                print("Desaprobó el", porcent_desaprob, "% de los estudiantes")
+                quit()
+            else:
+                quit()
+        elif dia=="jueves":
+            asistencia=int(input("Ingrese el porcentaje de asistencia: "))
+            if asistencia>50:
+                print("Asistió la mayoría")
+                quit()
+            else:
+                print("No asistió la mayoría")
+                quit()
+        else:
+            if dd==1 and mm==1 or dd==1 and mm==7:
+                print("Comienzo de nuevo ciclo")
+            nuevos=int(input("Ingrese la cantidad de nuevos alumnos: "))
+            arancel=float(input("Ingrese el arancel a abonar por cada alumno: "))
+            ingreso_total=nuevos*arancel
+            print("Los ingresos totales serán de $", ingreso_total)
+            quit()
+elif dia=="sabado" or dia=="domingo":
+    print("No se dictan clases los fines de semana")
+    quit()
+else:
+    print("El día ingresado no es válido")
+    quit()
 
