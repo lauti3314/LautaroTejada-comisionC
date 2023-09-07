@@ -256,3 +256,36 @@ while num!=-1:
             even_number+=1
 
 print(f"Total de números pares ingresados: {even_number}")
+#Ejercicio 23 y 24
+product=1
+total=0
+
+while product!=0:
+    product=float(input("Ingrese el valor del productor: "))
+    if product<0:
+        print("¡ERROR! Ingrese solo montos válidos")
+    else:
+        total=total+product
+
+if total>1000:
+    discount=total*0.1
+    final_price=total-discount
+    print(f"El total de su compra es de ${total}")
+    print(f"Se le aplicó un descuento del 10%, así que el precio final es de {final_price}")
+else:
+    print(f"El total de su compra es de ${total}")
+
+#Ejercicio 25
+num=int(input("Ingrese un número entero positivo: "))
+
+if num<0:
+    print("¡ERROR! El número debe ser positivo")
+elif num==0:
+    print("El factorial de 0 es 1")
+else:
+    factorial=1
+
+    for i in range(1, num+1):
+        factorial*=i
+    
+    print(f"El factorial de {num} es {factorial}")
