@@ -1,4 +1,5 @@
 #Ejercicio 1
+"""
 x = 0
 
 while x < 30:
@@ -12,3 +13,22 @@ while x < 30:
     else :
         print(x)
     x+=1
+"""
+#Ejercicio 2
+"""
+lineas = []
+
+while True:
+    linea = input("Ingrese una línea o deje en blanco para terminar el programa: ")
+    if not linea:
+        break
+    lineas.append(linea)
+for linea in lineas:
+    print(linea.upper()) 
+"""
+#Ejercicio 3
+#Ejercicio 4
+#Ejercicio 5
+#Ejercicio 6
+#Ejercicio 7 
+#Ejercicio 8
