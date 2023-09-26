@@ -10,3 +10,13 @@ y = int(input('Otro número: '))
 print(most(x-3,least(x+2, y-5)))
 """
 #Ejericio ahorcado
+
+from funciones import hanged
+
+while True:
+    word = str(input("Bienvenido al ahorcado, ingrese una palabra para adivinar: "))
+    
+    if not word.isnumeric():
+        hanged(word)
+    else:
+        print("Por favor, ingrese un palabra, no un número")
