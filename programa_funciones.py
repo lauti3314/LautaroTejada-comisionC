@@ -9,7 +9,7 @@ y = int(input('Otro número: '))
 
 print(most(x-3,least(x+2, y-5)))
 """
-#Ejericio ahorcado
+#Ejercicio ahorcado
 
 from funciones import hanged
 
