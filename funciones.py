@@ -54,3 +54,18 @@ def hanged (word):
              print(f"La palabra no contiene la letra {letter}")
              lives -= 1
              continue
+
+#Funciones TP N°5
+
+#1.	
+def verify_dni (dni):
+    if len(dni) == 7 or len(dni)==8:
+        return True
+    else:
+        return False
+    
+#2.
+def last_phrase (phrase):
+    words = phrase.split() [-1]
+    return words
+
