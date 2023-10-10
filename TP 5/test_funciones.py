@@ -150,15 +150,71 @@ def test_aply_discount(prices):
 
         return final_price
 #11
-
+def test_aply_function(func, numbers):
+    results=[]
+    
+    for num in numbers:
+        results.append(func(num))
+    
+    return results
+def test_multiply_by_two(num):
+    
+    return num*2
 #12
-
+def test_separate_phrase(phrase):
+    words={}
+    key=1
+    
+    for element in phrase.split():
+        words[key]=element
+        key+=1
+    return words
 #13
+import math
 
+def test_calculate_module(vector):
+    x, y, z = vector
+    module = math.sqrt(x**2 + y**2 + z**2)
+    return module
 #14
-
+def test_is_prime(num):
+    counter=0
+    for i in range(1,num+1):
+        if num%i==0:
+            counter+=1
+    
+    if counter==2:
+        return True
+    else:
+        return False
 #15
+def test_list_filler(nums):
+    num=1
+    while num!=0:
+        num=int(input("Ingrese un número, para dejar de ingresar números ingrese 0(cero): "))
+        if num!=0:
+            nums.append(num)
+    return nums
 
+def test_factorial_calculator(num):
+    if num==0:
+        return 1
+    else:
+        return num*test_factorial_calculator(num-1)
 #16
+def test_frequency(num, digit):
+    num_str=str(num)
+    digit_str=str(digit)
+    counter=0
 
+    for i in num_str:
+        if i==digit_str:
+            counter+=1
+    return counter
 #17
+def test_sum_of_digit(num):
+        digits_sum=0
+        num_str=str(num)
+        for i in num_str:
+            digits_sum+=int(i)
+        return digits_sum

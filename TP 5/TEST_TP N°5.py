@@ -103,4 +103,72 @@ prices={2000:10, 4000:20, 6000:30}
 print(f"El precio final de su carrito es de {test_funciones.test_aply_discount(prices)}")
 """
 #11
+"""
+numbers=[2,6,10,43,84]
 
+results=test_funciones.test_aply_function(test_funciones.test_multiply_by_two, numbers)
+
+for i in range(len(numbers)):
+    print(f"{numbers[i]} multiplicado por 2 es igual a {results[i]}")
+"""
+#12
+"""
+phrase=input("Ingrese una frase: ")
+print(test_funciones.test_separate_phrase(phrase))
+"""
+#13
+"""
+vector = (3, 4, 5)
+
+module = test_funciones.test_calculate_module(vector)
+
+print("El módulo del vector es:", module)
+"""
+#14
+"""
+num=int(input("Ingrese un número: "))
+
+if test_funciones.test_is_prime(num)==True:
+    print(f"{num} es primo")
+else:
+    print(f"{num} no es primo")
+"""
+#15
+"""
+nums=[]
+test_funciones.test_list_filler(nums)
+
+print("Factoriales de los números ingresados: ")
+for num in nums:
+    factorial=test_funciones.test_factorial_calculator(num)
+    print(f"El factorial de {num} es {factorial}")
+
+print(f"Se leyeron {len(nums)} números en total")
+"""
+#16
+"""
+num=int(input("Ingrese un número: "))
+digit=int(input("Ingrese un digito: "))
+
+print(f"El número {digit} se repite {test_funciones.test_frequency(num, digit)} veces en {num}")
+"""
+#17
+"""
+max_num=0
+
+while True:
+    num=int(input("Ingrese un número primo: "))
+    if test_funciones.test_is_prime(num):
+       if num>max_num:
+           max_num=num
+       
+       print(f"La suma de los dígitos de {num} es {test_funciones.test_sum_of_digit(num)}")
+       digit=int(input("Ingrese un dígito: "))
+       print(f"El número {digit} se repite {test_funciones.test_frequency(num, digit)} veces en {num}")
+    else:
+        break
+
+factorial=test_funciones.test_factorial_calculator(max_num)
+print(f"El mayor número ingresado fue {max_num}")
+print(f"El factorial de {max_num} es {factorial}")
+"""
