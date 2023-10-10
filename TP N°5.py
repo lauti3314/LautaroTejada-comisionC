@@ -16,7 +16,7 @@ phrase = str(input("Ingrese una frase: ")).lower()
 print(f"La ultima palabra de su frase es {funciones.last_phrase(phrase)}")
 """
 #3
-
+"""
 print("Bienvenido \n Ingrese sus datos:")
 
 name = input("Ingrese su primer nombre: ")
@@ -33,3 +33,28 @@ while True:
     continue
 
 print(f"Su nombre de usuario es: {name}{len(lastname)}{dni}")
+"""
+#4
+"""
+number1 = int(input("Ingrese un número: "))
+number2 = int(input("Ingrese un segundo número: "))
+
+while True:
+ if funciones.multiple(number1, number2) == True:
+    print(f"{number1} es multiplo de {number2}.")
+    break
+ else:
+   print(f"{number1} no es múltiplo de {number2}.") 
+   break
+"""
+#5
+
+days = int(input("Ingrese la cantidad de días que quiere calcular: "))
+
+for i in range(days):
+    maxi_tem=float(input("Ingrese la temperatura máxima(en °C sin el símbolo\"°\"): "))
+    mini_tem=float(input("Ingrese la temperatura minima(en °C sin el símbolo\"°\"): "))
+    media = funciones.media_calculator(maxi_tem, mini_tem)
+    print(f"La temperatura media del día {i+1} fue de {media}°")
+
+#6

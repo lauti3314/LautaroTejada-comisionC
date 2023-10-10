@@ -69,3 +69,16 @@ def last_phrase (phrase):
     words = phrase.split() [-1]
     return words
 
+#4
+def multiple (number1, number2):
+    if number1 % number2 == 0 :
+        return True
+    else:
+        return False
+
+#5
+def media_calculator(maxi,mini):
+    media=(maxi+mini)/2
+    return media
+
+#6
