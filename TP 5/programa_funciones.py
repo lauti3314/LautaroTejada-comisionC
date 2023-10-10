@@ -2,7 +2,7 @@
 
 #Ejercicio funciones 1
 """
-from funciones import most, least
+from test_funciones import most, least
 
 x = int(input('Un número: '))
 y = int(input('Otro número: '))
@@ -11,7 +11,7 @@ print(most(x-3,least(x+2, y-5)))
 """
 #Ejercicio ahorcado
 
-from funciones import hanged
+from test_funciones import hanged
 
 while True:
     word = str(input("Bienvenido al ahorcado, ingrese una palabra para adivinar: "))
