@@ -1,6 +1,51 @@
+#1
+def numbers_bubble_sort(list):
+
+    large_list = len(list)
+    for i in range(large_list):
+        for j in range(large_list-1):
+            if list[j] > list[j+1]:
+                var = list[j]
+                list[j] = list[j+1]
+                list[j+1] = var
+    return list
+#2
+def caracter_selection_sort(list):
+    large_list = len(list)
+    for i in range(large_list):
+        min_index = i
+        for j in range(i, large_list):
+            if (list[j][0]) < (list[min_index][0]): 
+                var = list[j]
+                list[j] = list[min_index]
+                list[min_index] = var
+    return list
 #3
 def sort_books_by_field(book, field):
     return sorted(book, key=lambda x: x[field])
+
+#4
+def large_string_insertion_sort(list):
+    large_list = len(list)
+    for i in range(large_list):
+        min_index = i
+        for j in range(i, large_list):
+            if len(list[j]) < len(list[min_index]): 
+                var = list[j]
+                list[j] = list[min_index]
+                list[min_index] = var
+    return list
+#5
+def large_string_insertion_invested(list):
+    large_list = len(list)
+    for i in range(large_list):
+        min_index = i
+        for j in range(i, large_list):
+            if len(list[j]) > len(list[min_index]): 
+                var = list[j]
+                list[j] = list[min_index]
+                list[min_index] = var
+    return list
 
 #6
 def sort_by_count(list):
@@ -17,6 +62,25 @@ def sort_by_count(list):
     for i in range(len(counter)):
         list_sort.extend([i + min_val] * counter[i])
 
+    return list_sort
+
+#7
+def items_list_sort(list):
+    large_list = len(list)
+    number_list = []
+    string_list = []
+    list_sort = []
+    for i in range(large_list):
+        if isinstance(list[i], str):
+            string_list.append(list[i])
+        elif isinstance(list[i], int):
+            number_list.append(list[i])
+    
+    number_list = numbers_bubble_sort(number_list)
+
+    string_list = caracter_selection_sort(string_list)
+
+    list_sort = number_list + string_list
     return list_sort
 
 #8
